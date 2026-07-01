@@ -138,7 +138,7 @@ export const handler = async (
   );
 
   // Construct the public URL
-  const publicUrl = `https://${HTTP_API_ENDPOINT}/${subdomain}/`;
+  const publicUrl = HTTP_API_ENDPOINT.startsWith('http') ? `${HTTP_API_ENDPOINT}/${subdomain}/` : `https://${HTTP_API_ENDPOINT}/${subdomain}/`;
 
   // Build the registration response
   const response: RegisterResponse = {
