@@ -120,9 +120,10 @@ export const handler = async (
       UpdateExpression:
         'SET #status = :status, subdomain = :subdomain, localPort = :localPort, ' +
         'sessionToken = :sessionToken, updatedAt = :updatedAt, lastHeartbeat = :lastHeartbeat, ' +
-        'ttl = :ttl',
+        '#ttl = :ttl',
       ExpressionAttributeNames: {
         '#status': 'status',
+        '#ttl': 'ttl',
       },
       ExpressionAttributeValues: {
         ':status': { S: 'ACTIVE' },
