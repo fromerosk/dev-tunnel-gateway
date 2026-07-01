@@ -38,13 +38,6 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "files": [
-    "dist",
-    "src",
-    "cdk.json",
-    "README.md",
-    "tsconfig.json"
-  ],
   "dependencies": {
     "aws-cdk-lib": "^2.150.0",
     "constructs": "^10.3.0",
