@@ -1,0 +1,64 @@
+{
+  "name": "dev-tunnel-gateway",
+  "version": "0.1.0",
+  "description": "An ngrok-like tunnel gateway for routing mobile app traffic to a local dev server via AWS serverless infrastructure",
+  "main": "dist/index.js",
+  "bin": {
+    "dev-tunnel": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "cdk:deploy": "npx cdk deploy",
+    "cdk:destroy": "npx cdk destroy",
+    "cdk:synth": "npx cdk synth"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fromerosk/dev-tunnel-gateway.git"
+  },
+  "author": "Frank Romero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fromerosk/dev-tunnel-gateway/issues"
+  },
+  "homepage": "https://github.com/fromerosk/dev-tunnel-gateway#readme",
+  "keywords": [
+    "tunnel",
+    "ngrok",
+    "dev-tools",
+    "aws",
+    "serverless",
+    "websocket",
+    "local-development"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "cdk.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "aws-cdk-lib": "^2.150.0",
+    "constructs": "^10.3.0",
+    "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.600.0",
+    "@aws-sdk/client-ssm": "^3.600.0",
+    "ws": "^8.17.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.3.0",
+    "fast-check": "^3.15.0",
+    "@types/aws-lambda": "^8.10.136",
+    "@types/ws": "^8.5.10",
+    "@types/uuid": "^9.0.8",
+    "@types/node": "^20.11.0",
+    "esbuild": "^0.21.0",
+    "typescript": "^5.4.0"
+  }
+}
