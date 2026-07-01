@@ -123,15 +123,16 @@ export class DevTunnelStack extends cdk.Stack {
     // Also pass the HTTP API endpoint to the register handler (for constructing public URLs)
     lambdas.registerHandler.addEnvironment('HTTP_API_ENDPOINT', httpApi.httpApiEndpoint);
 
-    // Fix the forward handler's ManageConnections permission with the real API ID
-    lambdas.forwardHandler.addToRolePolicy(
-      new cdk.aws_iam.PolicyStatement({
-        actions: ['execute-api:ManageConnections'],
-        resources: [
-          `arn:aws:execute-api:${this.region}:${this.account}:${webSocketApi.api.ref}/prod/POST/@connections/*`,
-        ],
-      })
-    );
+    // Grant ManageConnections permission to handlers that use PostToConnection
+    const managementPolicy = new cdk.aws_iam.PolicyStatement({
+      actions: ['execute-api:ManageConnections'],
+      resources: [
+        `arn:aws:execute-api:${this.region}:${this.account}:${webSocketApi.api.ref}/prod/POST/@connections/*`,
+      ],
+    });
+    lambdas.forwardHandler.addToRolePolicy(managementPolicy);
+    lambdas.registerHandler.addToRolePolicy(managementPolicy);
+    lambdas.heartbeatHandler.addToRolePolicy(managementPolicy);
 
     // Step 5: Outputs
     new DevTunnelOutputs(this, 'Outputs', {
