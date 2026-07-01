@@ -175,6 +175,14 @@ export class DevTunnelLambdas extends Construct {
             },
             cdk.Stack.of(this)
           ),
+          cdk.Arn.format(
+            {
+              service: 'ssm',
+              resource: 'parameter',
+              resourceName: props.ssmTokenParameterPath.replace(/^\//, ''),
+            },
+            cdk.Stack.of(this)
+          ),
         ],
       })
     );

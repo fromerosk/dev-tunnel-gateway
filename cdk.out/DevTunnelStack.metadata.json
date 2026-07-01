@@ -59,7 +59,7 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Table2 in aws-cdk-lib...",
-        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:43:26)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:39:26)",
         "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -74,7 +74,387 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...new Table2 in aws-cdk-lib...",
-        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:68:33)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:61:33)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/WebSocketApi": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiF43D171C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:53:16)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/LambdaAuthorizer": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiLambdaAuthorizer41771310"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:60:24)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/ConnectIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiConnectIntegration4DE8FDC3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "DevTunnelWebSocketApi.createLambdaIntegration (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:173:12)",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:79:37)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/DisconnectIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiDisconnectIntegration31E7DFE6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "DevTunnelWebSocketApi.createLambdaIntegration (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:173:12)",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:80:40)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/RegisterIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiRegisterIntegration7E32AAD0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "DevTunnelWebSocketApi.createLambdaIntegration (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:173:12)",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:81:38)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/HeartbeatIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiHeartbeatIntegration94BEF96A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "DevTunnelWebSocketApi.createLambdaIntegration (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:173:12)",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:82:39)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/ResponseIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiResponseIntegration1BB28407"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "DevTunnelWebSocketApi.createLambdaIntegration (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:173:12)",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:83:38)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/ConnectRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiConnectRoute47317442"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:87:26)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/DisconnectRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiDisconnectRouteB5291F08"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:96:29)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/RegisterRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiRegisterRouteCAFD0464"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:103:27)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/HeartbeatRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiHeartbeatRoute02680F4A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:110:28)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/ResponseRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiResponseRouteCC611284"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:117:27)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/ProdStage": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiProdStage97BF5858"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:124:18)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/WebSocketApi/WebSocketEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "WebSocketApiWebSocketEndpoint33130A78"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:162:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/DataPlaneApi": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiDataPlaneApi01720F13"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:38:16)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/DefaultStage": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiDefaultStage34399C39"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:51:19)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/ForwardLambdaPermission": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiForwardLambdaPermission8881A4A4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:59:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/ForwardIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiForwardIntegration3694D37C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:69:32)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/ForwardRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiForwardRoute361800F2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:78:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/HealthCheckLambdaPermission": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiHealthCheckLambdaPermission6F3A1BE7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:86:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/HealthIntegration": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiHealthIntegration2EBB4635"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:96:31)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/HttpApi/HealthRoute": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "HttpApiHealthRoute7A4488F2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelHttpApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/http-api.ts:105:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:110:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Outputs/WebSocketApiEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "OutputsWebSocketApiEndpoint70BA4207"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelOutputs (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/ssm-outputs.ts:41:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:137:5)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Outputs/HttpApiEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "OutputsHttpApiEndpoint212C7719"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelOutputs (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/ssm-outputs.ts:46:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:137:5)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Outputs/HealthCheckUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "OutputsHealthCheckUrlA879FA87"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DevTunnelOutputs (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/ssm-outputs.ts:51:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:137:5)",
         "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
         "...node internals, ts-node, ts-node..."
       ]
@@ -89,6 +469,478 @@
       "type": "aws:cdk:creationStack",
       "data": [
         "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/AuthHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasAuthHandler204E9FCD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:78:24)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/AuthHandler/ApiGatewayAuthorizerInvoke": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasAuthHandlerApiGatewayAuthorizerInvokeEFF6247F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...NodejsFunction.addPermission in aws-cdk-lib...",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:69:23)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ConnectHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasConnectHandler088772E2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:90:27)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ConnectHandler/ApiGatewayConnectInvoke": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasConnectHandlerApiGatewayConnectInvokeCC84BAF0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...NodejsFunction.addPermission in aws-cdk-lib...",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:147:10)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/RegisterHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasRegisterHandlerFA42151D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:98:28)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/RegisterHandler/ApiGatewayRegisterInvoke": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasRegisterHandlerApiGatewayRegisterInvoke69067809"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...NodejsFunction.addPermission in aws-cdk-lib...",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:147:10)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ForwardHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasForwardHandler74D776F2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:106:27)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/DisconnectHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasDisconnectHandlerCE793189"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:115:30)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/DisconnectHandler/ApiGatewayDisconnectInvoke": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasDisconnectHandlerApiGatewayDisconnectInvokeBBDD096B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...NodejsFunction.addPermission in aws-cdk-lib...",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:147:10)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HeartbeatHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHeartbeatHandlerC8A87D34"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:123:29)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HeartbeatHandler/ApiGatewayHeartbeatInvoke": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHeartbeatHandlerApiGatewayHeartbeatInvokeFF78FA7C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...NodejsFunction.addPermission in aws-cdk-lib...",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:147:10)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HealthHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHealthHandlerE1E4811B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:131:26)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ResponseHandler/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasResponseHandler3E60557A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:139:28)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ResponseHandler/ApiGatewayResponseInvoke": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasResponseHandlerApiGatewayResponseInvoke8615C679"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...NodejsFunction.addPermission in aws-cdk-lib...",
+        "new DevTunnelWebSocketApi (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/websocket-api.ts:147:10)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:100:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Outputs/TokenPathConfig/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "OutputsTokenPathConfig5F043A24"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new StringParameter2 in aws-cdk-lib...",
+        "new DevTunnelOutputs (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/ssm-outputs.ts:32:5)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:137:5)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/AuthHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasAuthHandlerServiceRoleAAAA6683"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:78:24)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ConnectHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasConnectHandlerServiceRole438B5E20"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:90:27)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/RegisterHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasRegisterHandlerServiceRoleF71F7B72"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:98:28)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ForwardHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasForwardHandlerServiceRoleB5901063"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:106:27)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/DisconnectHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasDisconnectHandlerServiceRole520BA83D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:115:30)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HeartbeatHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHeartbeatHandlerServiceRole9B60FBBC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:123:29)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HealthHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHealthHandlerServiceRole75A56830"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:131:26)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ResponseHandler/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasResponseHandlerServiceRole21C582BF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new NodejsFunction in aws-cdk-lib...",
+        "new DevTunnelLambdas (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/lambda-functions.ts:139:28)",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:90:21)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/AuthHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasAuthHandlerServiceRoleDefaultPolicy1774430D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ConnectHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasConnectHandlerServiceRoleDefaultPolicyF3AED03C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/RegisterHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasRegisterHandlerServiceRoleDefaultPolicy44FDB3E9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ForwardHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasForwardHandlerServiceRoleDefaultPolicyF990C168"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/DisconnectHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasDisconnectHandlerServiceRoleDefaultPolicy07579AA9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HeartbeatHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHeartbeatHandlerServiceRoleDefaultPolicyFD569FE0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/HealthHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasHealthHandlerServiceRoleDefaultPolicyC24A1E2B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/Lambdas/ResponseHandler/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LambdasResponseHandlerServiceRoleDefaultPolicyC4F16E3E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
         "(no user code in 10 frames, use --stack-trace-limit to capture more)"
       ]
     }

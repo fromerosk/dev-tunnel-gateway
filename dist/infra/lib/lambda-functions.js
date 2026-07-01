@@ -170,6 +170,11 @@ class DevTunnelLambdas extends constructs_1.Construct {
                     resource: 'parameter',
                     resourceName: props.ssmTokenParameterPath.replace(/^\//, '') + '/*',
                 }, cdk.Stack.of(this)),
+                cdk.Arn.format({
+                    service: 'ssm',
+                    resource: 'parameter',
+                    resourceName: props.ssmTokenParameterPath.replace(/^\//, ''),
+                }, cdk.Stack.of(this)),
             ],
         }));
         // Grant API Gateway management permission to forward-handler (PostToConnection)
