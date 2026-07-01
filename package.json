@@ -13,7 +13,8 @@
     "test:watch": "vitest",
     "cdk:deploy": "npx cdk deploy",
     "cdk:destroy": "npx cdk destroy",
-    "cdk:synth": "npx cdk synth"
+    "cdk:synth": "npx cdk synth",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
