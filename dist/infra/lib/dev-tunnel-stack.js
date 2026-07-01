@@ -36,6 +36,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DevTunnelStack = void 0;
 const cdk = __importStar(require("aws-cdk-lib"));
 const dynamodb = __importStar(require("aws-cdk-lib/aws-dynamodb"));
+const lambda_functions_1 = require("./lambda-functions");
+const websocket_api_1 = require("./websocket-api");
+const http_api_1 = require("./http-api");
+const ssm_outputs_1 = require("./ssm-outputs");
 const custom_domain_1 = require("./custom-domain");
 /**
  * Main CDK stack for the Dev Tunnel Gateway infrastructure.
@@ -48,16 +52,11 @@ const custom_domain_1 = require("./custom-domain");
  * - Optional custom domain with TLS
  */
 class DevTunnelStack extends cdk.Stack {
-    /** DynamoDB table storing tunnel session state */
     sessionsTable;
-    /** DynamoDB table storing pending request/response correlations */
     pendingRequestsTable;
-    /** Optional custom domain construct (only created when domain config is provided) */
-    customDomain;
     constructor(scope, id, props) {
         super(scope, id, props);
         // --- DynamoDB Tables ---
-        // Sessions table: tracks active tunnel connections
         this.sessionsTable = new dynamodb.Table(this, 'DevTunnelSessions', {
             tableName: 'DevTunnelSessions',
             partitionKey: { name: 'connectionId', type: dynamodb.AttributeType.STRING },
@@ -66,20 +65,17 @@ class DevTunnelStack extends cdk.Stack {
             pointInTimeRecovery: false,
             removalPolicy: cdk.RemovalPolicy.DESTROY,
         });
-        // GSI: lookup sessions by subdomain (used for routing inbound HTTP requests)
         this.sessionsTable.addGlobalSecondaryIndex({
             indexName: 'SubdomainIndex',
             partitionKey: { name: 'subdomain', type: dynamodb.AttributeType.STRING },
             projectionType: dynamodb.ProjectionType.INCLUDE,
             nonKeyAttributes: ['connectionId', 'status'],
         });
-        // GSI: lookup sessions by tokenId (used for token expiration enforcement)
         this.sessionsTable.addGlobalSecondaryIndex({
             indexName: 'TokenIdIndex',
             partitionKey: { name: 'tokenId', type: dynamodb.AttributeType.STRING },
             projectionType: dynamodb.ProjectionType.ALL,
         });
-        // Pending requests table: correlates forwarded requests with tunnel responses
         this.pendingRequestsTable = new dynamodb.Table(this, 'DevTunnelPendingRequests', {
             tableName: 'DevTunnelPendingRequests',
             partitionKey: { name: 'requestId', type: dynamodb.AttributeType.STRING },
@@ -88,16 +84,72 @@ class DevTunnelStack extends cdk.Stack {
             pointInTimeRecovery: false,
             removalPolicy: cdk.RemovalPolicy.DESTROY,
         });
-        // --- Optional Custom Domain ---
-        // Only provision when both domainName and hostedZoneId are provided in stack props.
-        // Once WebSocket and HTTP APIs are wired, pass their IDs and stage names here.
+        // --- WebSocket API (Control Plane) ---
+        // We need the Lambdas first but they need the WS endpoint...
+        // Break the circular dependency by creating the WebSocket API first with placeholder Lambdas,
+        // then creating Lambdas with the endpoint. Instead, use a two-pass approach with Lazy values.
+        // Create a placeholder for the WebSocket endpoint that will be resolved later
+        const ssmTokenParameterPath = '/dev-tunnel/tokens';
+        // Step 1: Create Lambdas with a lazy-resolved WebSocket endpoint
+        // We'll use Fn.sub with the API ID after creating the WebSocket API
+        // Actually, CDK handles this with token resolution. Create WS API first.
+        // Create a temporary Lambda set with dummy endpoint, then fix with .addEnvironment
+        // Better approach: create WebSocket API first (it doesn't need lambdas to exist for the CfnApi),
+        // but it DOES need lambda ARNs for integrations. So we need lambdas first.
+        // The correct CDK pattern: Create lambdas → Create APIs (referencing lambda ARNs) → 
+        // Add env var to lambdas (referencing API endpoint). CDK resolves tokens at synth time.
+        // Step 1: Create Lambdas with placeholder endpoint (will be overridden)
+        const lambdas = new lambda_functions_1.DevTunnelLambdas(this, 'Lambdas', {
+            sessionsTable: this.sessionsTable,
+            pendingRequestsTable: this.pendingRequestsTable,
+            webSocketApiEndpoint: 'PLACEHOLDER', // Will override below
+            webSocketApiId: 'PLACEHOLDER',
+            webSocketApiStage: 'prod',
+            ssmTokenParameterPath,
+        });
+        // Step 2: Create WebSocket API with the Lambda functions
+        const webSocketApi = new websocket_api_1.DevTunnelWebSocketApi(this, 'WebSocketApi', {
+            connectHandler: lambdas.connectHandler,
+            disconnectHandler: lambdas.disconnectHandler,
+            registerHandler: lambdas.registerHandler,
+            heartbeatHandler: lambdas.heartbeatHandler,
+            responseHandler: lambdas.responseHandler,
+            authHandler: lambdas.authHandler,
+        });
+        // Step 3: Create HTTP API with forward and health Lambdas
+        const httpApi = new http_api_1.DevTunnelHttpApi(this, 'HttpApi', {
+            forwardFunction: lambdas.forwardHandler,
+            healthCheckFunction: lambdas.healthHandler,
+        });
+        // Step 4: Override the WebSocket endpoint env var on lambdas that need it
+        // The real endpoint uses the API ID which is a CDK token resolved at deploy
+        const wsEndpoint = `https://${webSocketApi.api.ref}.execute-api.${this.region}.amazonaws.com/${webSocketApi.stage.stageName}`;
+        lambdas.forwardHandler.addEnvironment('WEBSOCKET_API_ENDPOINT', wsEndpoint);
+        lambdas.registerHandler.addEnvironment('WEBSOCKET_API_ENDPOINT', wsEndpoint);
+        lambdas.heartbeatHandler.addEnvironment('WEBSOCKET_API_ENDPOINT', wsEndpoint);
+        lambdas.responseHandler.addEnvironment('WEBSOCKET_API_ENDPOINT', wsEndpoint);
+        // Also pass the HTTP API endpoint to the register handler (for constructing public URLs)
+        lambdas.registerHandler.addEnvironment('HTTP_API_ENDPOINT', httpApi.httpApiEndpoint);
+        // Fix the forward handler's ManageConnections permission with the real API ID
+        lambdas.forwardHandler.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+            actions: ['execute-api:ManageConnections'],
+            resources: [
+                `arn:aws:execute-api:${this.region}:${this.account}:${webSocketApi.api.ref}/prod/POST/@connections/*`,
+            ],
+        }));
+        // Step 5: Outputs
+        new ssm_outputs_1.DevTunnelOutputs(this, 'Outputs', {
+            webSocketEndpointUrl: webSocketApi.webSocketEndpoint,
+            httpEndpointUrl: httpApi.httpApiEndpoint,
+            healthCheckUrl: `${httpApi.httpApiEndpoint}/health`,
+        });
+        // Step 6: Optional custom domain
         if (props?.domainName && props?.hostedZoneId) {
-            this.customDomain = new custom_domain_1.DevTunnelCustomDomain(this, 'CustomDomain', {
+            new custom_domain_1.DevTunnelCustomDomain(this, 'CustomDomain', {
                 domainName: props.domainName,
                 hostedZoneId: props.hostedZoneId,
-                // TODO: Replace with actual API IDs once the APIs are wired into this stack
-                httpApiId: '', // httpApi.api.ref
-                webSocketApiId: '', // webSocketApi.api.ref
+                httpApiId: httpApi.api.ref,
+                webSocketApiId: webSocketApi.api.ref,
                 httpStageName: '$default',
                 webSocketStageName: 'prod',
             });

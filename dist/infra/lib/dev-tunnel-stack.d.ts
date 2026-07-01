@@ -1,7 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import { Construct } from 'constructs';
-import { DevTunnelCustomDomain } from './custom-domain';
 /**
  * Props for the DevTunnelStack, extending standard CDK StackProps
  * with optional custom domain configuration.
@@ -23,12 +22,8 @@ export interface DevTunnelStackProps extends cdk.StackProps {
  * - Optional custom domain with TLS
  */
 export declare class DevTunnelStack extends cdk.Stack {
-    /** DynamoDB table storing tunnel session state */
     readonly sessionsTable: dynamodb.Table;
-    /** DynamoDB table storing pending request/response correlations */
     readonly pendingRequestsTable: dynamodb.Table;
-    /** Optional custom domain construct (only created when domain config is provided) */
-    readonly customDomain?: DevTunnelCustomDomain;
     constructor(scope: Construct, id: string, props?: DevTunnelStackProps);
 }
 //# sourceMappingURL=dev-tunnel-stack.d.ts.map

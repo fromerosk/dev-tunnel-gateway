@@ -1,0 +1,96 @@
+{
+  "/DevTunnelStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/DevTunnelSessions": [
+    {
+      "type": "aws:cdk:hasPhysicalName",
+      "data": {
+        "Ref": "DevTunnelSessions7F2440C4"
+      }
+    }
+  ],
+  "/DevTunnelStack/DevTunnelPendingRequests": [
+    {
+      "type": "aws:cdk:hasPhysicalName",
+      "data": {
+        "Ref": "DevTunnelPendingRequestsBABD09F5"
+      }
+    }
+  ],
+  "/DevTunnelStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/DevTunnelStack/DevTunnelSessions/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DevTunnelSessions7F2440C4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Table2 in aws-cdk-lib...",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:43:26)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/DevTunnelPendingRequests/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "DevTunnelPendingRequestsBABD09F5"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Table2 in aws-cdk-lib...",
+        "new DevTunnelStack (/Users/frankromero/src/dev-tunnel-gateway/src/infra/lib/dev-tunnel-stack.ts:68:33)",
+        "<anonymous> (/Users/frankromero/src/dev-tunnel-gateway/src/infra/bin/app.ts:7:1)",
+        "...node internals, ts-node, ts-node..."
+      ]
+    }
+  ],
+  "/DevTunnelStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}
