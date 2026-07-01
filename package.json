@@ -40,8 +40,10 @@
   },
   "files": [
     "dist",
+    "src",
     "cdk.json",
-    "README.md"
+    "README.md",
+    "tsconfig.json"
   ],
   "dependencies": {
     "aws-cdk-lib": "^2.150.0",
